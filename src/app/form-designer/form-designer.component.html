@@ -1,0 +1,49 @@
+<div>
+    <h2>Form Designer</h2>
+    <div class="container">
+        <div class="leftColumn">
+                <div> <button mat-raised-button color="primary" (click)="Preview()">Preview Form</button></div>
+                <table mat-table [dataSource]="listRecords" class="mat-elevation-z8">
+
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+                  
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Order">
+                      <th mat-header-cell *matHeaderCellDef> Order </th>
+                      <td mat-cell *matCellDef="let element"> {{element.order}} </td>
+                    </ng-container>
+                  
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="Label">
+                      <th mat-header-cell *matHeaderCellDef> Label </th>
+                      <td mat-cell *matCellDef="let element"> {{element.label}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Type">
+                        <th mat-header-cell *matHeaderCellDef> Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                      </ng-container>
+                  
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="IsVisible">
+                      <th mat-header-cell *matHeaderCellDef> Visible </th>
+                      <td mat-cell *matCellDef="let element"> {{element.hidden}} </td>
+                    </ng-container>
+                  
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="IsRequired">
+                      <th mat-header-cell *matHeaderCellDef> Required </th>
+                      <td mat-cell *matCellDef="let element"> {{element.required}} </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>                 
+                  <div> <button mat-raised-button color="accent" (click)="displayAddComponent();">Add Field</button></div>
+        </div>
+        <div class="rightColumn">
+            <app-add-update (informParent)="parentWillTakeAction($event)"></app-add-update>
+        </div>
+    </div>
+</div>

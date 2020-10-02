@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.leftColumn{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.rightColumn{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}

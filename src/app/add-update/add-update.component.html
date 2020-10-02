@@ -1,0 +1,56 @@
+<div class="addContainer">
+    <h3>Add/Update Field</h3>
+    <form (ngSubmit)="onSubmit(formdemo, userData)" #formdemo="ngForm">
+        <div>
+            <mat-checkbox [(ngModel)]="userData.hidden" name="IsVisible" required>Visible</mat-checkbox>
+            <!-- <span class="help-block" *ngIf="!IsVisible.valid && IsVisible.touched">Please select visible</span> -->
+        </div>
+        <div>            
+            <mat-checkbox [(ngModel)]="userData.required" name="IsRequired" required>Required</mat-checkbox>
+            <!-- <span class="help-block" *ngIf="!IsRequired.valid && IsRequired.touched">Please select IsRequired</span> -->
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput type="number" placeholder="Order" [(ngModel)]="userData.order" name="Order" required>
+                <!-- <mat-error *ngIf="!Order.valid && Order.touched">
+                    Please enter order
+                </mat-error> -->
+            </mat-form-field>
+           
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Field Name/Label" [(ngModel)]="userData.label" name="Label" required>
+                <!-- <mat-error *ngIf="!Label.valid && Label.touched">
+                    Please enter Label
+                </mat-error> -->
+            </mat-form-field>
+           
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Type</mat-label>
+                <mat-select  [(ngModel)]="userData.type" name="type" required>
+                  <mat-option value="text">Text Field</mat-option>
+                  <mat-option value="textarea">Text Area</mat-option>
+                  <mat-option value="dropdown">Dropdown</mat-option>
+                  <mat-option value="Multiselect">Multiselect</mat-option>
+                  <mat-option value="checkbox">Checkbox</mat-option>
+                </mat-select>
+                <!-- <mat-error *ngIf="!Type.valid && Type.touched">
+                    Please select Type
+                </mat-error> -->
+              </mat-form-field>
+        </div>
+        
+        
+        <button type="submit"  [disabled]="!formdemo.valid" mat-raised-button color="primary">Save</button>
+        <button mat-raised-button>Cancel</button>
+      
+      
+      
+    
+      
+     
+    </form>
+</div>
