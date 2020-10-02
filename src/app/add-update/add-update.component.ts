@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-update',
@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class AddUpdateComponent implements OnInit {
   @Output() informParent = new EventEmitter();
-  
+  @Output() ShowMe = new EventEmitter();
   userData = {   
     order: '',
     label: '',
@@ -23,6 +23,7 @@ export class AddUpdateComponent implements OnInit {
   onSubmit(form,formData) {
     console.log('submitted formdata',formData);  
     this.informParent.emit(formData);
+    this.ShowMe.emit(false);
   //  alert('Form submitted successfully');
     
    // form.reset();

@@ -17,6 +17,7 @@ export interface PeriodicElement {
   styleUrls: ['./form-designer.component.css']
 })
 export class FormDesignerComponent implements OnInit {
+  ShowAdd:boolean=false;
   messageFromChild: any;
   listRecords:any = [
     {   
@@ -98,7 +99,11 @@ export class FormDesignerComponent implements OnInit {
     });
   }
   displayAddComponent(){
-
+    console.log(this.ShowAdd)
+    this.ShowAdd=true;
+  }
+  HideChild(){
+    this.ShowAdd=false;
   }
  
 

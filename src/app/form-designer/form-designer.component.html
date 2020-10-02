@@ -41,9 +41,9 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                   </table>                 
                   <div> <button mat-raised-button color="accent" (click)="displayAddComponent();">Add Field</button></div>
-        </div>
-        <div class="rightColumn">
-            <app-add-update (informParent)="parentWillTakeAction($event)"></app-add-update>
+        </div>        
+        <div class="rightColumn" *ngIf="ShowAdd">
+            <app-add-update (informParent)="parentWillTakeAction($event)" (ShowMe)="HideChild()" ></app-add-update>
         </div>
     </div>
 </div>
