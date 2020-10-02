@@ -4,3 +4,8 @@
     align-items: center;
     background: antiquewhite;
 }
+.btns{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
