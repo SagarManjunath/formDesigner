@@ -1,6 +1,7 @@
 # Formdesigner
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+download the project as a zip folder or any other way, run "npm install" in terminal of project folder
 
 ## Development server
 
